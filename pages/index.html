@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Supamart</title>
+  <!-- Global CSS -->
   <link rel="stylesheet" href="../css/main.css">
+  <!-- Page-specific CSS -->
   <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <nav>
-      <h1>Supamart</h1>
+      <a href="/"><img src="../assets/images/logo.png" alt="Supamart Logo" style="height:50px;"></a>
       <ul>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
@@ -19,25 +22,31 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <main>
     <section class="hero">
+      <img src="../assets/images/hero.png" alt="Marketplace Hero" style="max-width:400px; margin-bottom:1rem;">
       <h2>Welcome to Supamart</h2>
       <p>Your one-stop online marketplace</p>
       <button id="shopNowBtn">Shop Now</button>
     </section>
 
-    <!-- Loading indicator -->
+    <!-- Loading Indicator -->
     <div id="loading" class="loading-overlay" style="display:none;">
       <div class="spinner"></div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Supamart</p>
   </footer>
 
+  <!-- Global JS -->
   <script src="../js/main.js"></script>
+  <!-- API calls -->
   <script src="../scripts/api.js"></script>
+  <!-- Landing page JS -->
   <script src="../js/index.js"></script>
 </body>
 </html>
