@@ -58,3 +58,40 @@
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
+/* intl-tel-input styling fix */
+.iti {
+  width: 100%;
+}
+
+.iti__selected-flag {
+  background-color: #fff;
+  border-radius: 6px 0 0 6px;
+  padding: 6px;
+}
+
+.iti__country-list {
+  z-index: 10000; /* ensures dropdown appears above all elements */
+}
+
+input[type="tel"] {
+  width: 100%;
+  padding: 10px 10px 10px 50px; /* spacing for flag area */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Ensure the plugin container spans full width */
+.iti {
+  width: 100%;
+}
+
+/* Adjust padding so input text doesn't overlap flag */
+input[type="tel"] {
+  padding-left: 60px;
+}
+
+/* Dropdown appears above other elements */
+.iti__country-list {
+  z-index: 10000;
+}
