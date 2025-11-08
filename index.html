@@ -1,52 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supamart</title>
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="../css/main.css">
-  <!-- Page-specific CSS -->
-  <link rel="stylesheet" href="../css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your E-commerce Store - Landing Page</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="/"><img src="../assets/images/logo.png" alt="Supamart Logo" style="height:50px;"></a>
-      <ul>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/seller-dashboard">Become a Seller</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <main>
+    <header>
+        <div class="container">
+           <div class="logo">
+            <a href="index.html">
+             <img src="../assets/images/logo.png" alt="Your Store Logo" class="site-logo">
+            </a>
+         </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <!-- NEW LINK ADDED HERE -->
+                    <li><a href="seller-signup.html" class="btn-secondary nav-seller-btn"><strong>Become a Seller</strong></a></li>
+                    <!-- Existing Links -->
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i> <!-- Can be linked to login/account page -->
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+
     <section class="hero">
-      <img src="../assets/images/hero.png" alt="Marketplace Hero" style="max-width:400px; margin-bottom:1rem;">
-      <h2>Welcome to Supamart</h2>
-      <p>Your one-stop online marketplace</p>
-      <button id="shopNowBtn">Shop Now</button>
+        <div class="hero-content">
+            <h1>Discover Our Latest Collection</h1>
+            <p>Find unique and high-quality products that you'll love.</p>
+            <a href="#featured-products" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <!-- Replace with your actual hero image -->
+            <img src="" alt="Hero Image">
+        </div>
     </section>
 
-    <!-- Loading Indicator -->
-    <div id="loading" class="loading-overlay" style="display:none;">
-      <div class="spinner"></div>
-    </div>
-  </main>
+    <section id="featured-products" class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="" alt="Product 1">
+                    <h3>Stylish T-Shirt</h3>
+                    <p class="price">$25.00</p>
+                    <a href="#" class="btn-small">View Details</a>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="" alt="Product 2">
+                    <h3>Comfortable Jeans</h3>
+                    <p class="price">$55.00</p>
+                    <a href="#" class="btn-small">View Details</a>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="" alt="Product 3">
+                    <h3>Classic Sneakers</h3>
+                    <p class="price">$70.00</p>
+                    <a href="#" class="btn-small">View Details</a>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="" alt="Product 4">
+                    <h3>Modern Backpack</h3>
+                    <p class="price">$40.00</p>
+                    <a href="#" class="btn-small">View Details</a>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Supamart</p>
-  </footer>
+    <section class="promo-banner">
+        <div class="container">
+            <h2>Limited Time Offer: 20% Off All Accessories!</h2>
+            <p>Shop now and save on your favorite items.</p>
+            <a href="#" class="btn">Shop Accessories</a>
+        </div>
+    </section>
 
-  <!-- Global JS -->
-  <script src="../js/main.js"></script>
-  <!-- API calls -->
-  <script src="../scripts/api.js"></script>
-  <!-- Landing page JS -->
-  <script src="../js/index.js"></script>
+    <section class="about-us">
+        <div class="container">
+            <h2>Our Story</h2>
+             <div class="about-logo">
+              <img src="../assets/images/logo.png" alt="Brand Logo">
+             </div>
+                <div class="about-text">
+                    <p>We are passionate about curating a collection of unique and high-quality products that inspire and delight our customers. Our journey began with a vision to...</p>
+                    <a href="#" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Amazing products and fast shipping! Highly recommend!"</p>
+                    <div class="customer-info">
+                        <img src="" alt="Customer 1">
+                        <h4>Jane Doe</h4>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I found exactly what I was looking for. Great quality and service."</p>
+                    <div class="customer-info">
+                        <img src="" alt="Customer 2">
+                        <h4>John Smith</h4>
+                    </div>
+                </div>
+                <!-- Add more testimonials -->
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-signup">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Get exclusive offers, new product alerts, and more.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Your Logo</h3>
+                    <p>Your e-commerce company description goes here. We aim to provide the best products and shopping experience.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 E-commerce Street, Your City, YS 12345</p>
+                    <p><i class="fas fa-envelope"></i> info@yourecommercestore.com</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 Your E-commerce Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript file (for interactive elements if any) -->
+    <script src="../js/index.js"></script>
 </body>
 </html>

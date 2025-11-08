@@ -1,0 +1,338 @@
+/* --- Inherit General Dashboard Styles --- */
+/* You might want to put all common styles in a main style.css */
+/* and then only override/add specific styles here. */
+/* For this example, I'll include some basics again. */
+
+:root {
+    --primary-color: #007bff; /* Buyer primary */
+    --secondary-color: #6c757d; /* Buyer secondary */
+    --success-color: #28a745; /* Seller Accent Color */
+    --danger-color: #dc3545; /* General danger */
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --border-color: #dee2e6;
+    --sidebar-bg: #343a40;
+    --sidebar-text: #c2c7d0;
+    --sidebar-hover-bg: #495057;
+    --header-bg: #ffffff;
+    --content-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --card-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    --seller-accent-color: #28a745; /* Green for sellers */
+    --seller-accent-hover: #218838;
+}
+
+body { /* Inherited */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--content-bg);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.dashboard-wrapper { /* Inherited */
+    display: flex;
+    min-height: 100vh;
+}
+
+.container { /* Inherited */
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* --- Seller Specific Sidebar Styles --- */
+.seller-dashboard-wrapper {
+    /* Could add seller specific outer styles if needed */
+}
+
+.seller-sidebar {
+    background-color: var(--sidebar-bg); /* Shared sidebar background */
+    color: var(--sidebar-text);
+    /* You could make the seller sidebar a different color if desired */
+}
+
+.seller-sidebar .sidebar-header h3 {
+    color: #fff;
+}
+
+.seller-sidebar .sidebar-nav li.nav-item a {
+    color: var(--sidebar-text);
+}
+
+.seller-sidebar .sidebar-nav li.nav-item a:hover {
+    background-color: var(--sidebar-hover-bg);
+    color: #fff;
+}
+
+/* Highlight for seller specific active item */
+.seller-sidebar .sidebar-nav li.nav-item.active a {
+    background-color: var(--seller-accent-color);
+    color: #fff;
+}
+
+
+/* --- Seller Specific Header Styles --- */
+.seller-header {
+    /* Can inherit from .dashboard-header */
+    border-left: 5px solid var(--seller-accent-color); /* Seller accent on the header */
+}
+
+.seller-header .header-left h2 {
+    color: var(--dark-gray);
+}
+
+.seller-header .header-actions {
+    /* Inherited from dashboard-style.css, but you might adjust spacing */
+}
+
+.seller-header .header-search input[type="text"] {
+    border-color: var(--border-color);
+}
+.seller-header .header-search i {
+    color: #aaa;
+}
+.seller-header .header-search input[type="text"]:focus {
+    border-color: var(--seller-accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Green focus */
+}
+
+/* --- Seller Specific Content Sections --- */
+.dashboard-content { /* Inherited */ }
+
+.dashboard-section { /* Inherited */
+    padding: 40px 0;
+    display: none;
+}
+
+.dashboard-section.active { /* Inherited */
+    display: block;
+}
+
+.dashboard-section h3 { /* Inherited */
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--dark-gray);
+}
+
+/* --- Seller Widgets/Cards --- */
+.widget-grid { /* Inherited */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.widget-card { /* Inherited */
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    border-left: 5px solid var(--primary-color); /* Default border */
+}
+
+/* Seller specific widget borders and colors */
+.widget-card .widget-icon {
+    color: var(--primary-color); /* Default icon color */
+}
+
+.widget-card .widget-value {
+    color: var(--primary-color); /* Default value color */
+}
+
+/* Override for seller-specific widgets */
+/* Widget 1: Total Sales - Green */
+.widget-grid .widget-card:nth-child(1) { /* Adjust selector if order changes */
+    border-left-color: var(--seller-accent-color);
+}
+.widget-grid .widget-card:nth-child(1) .widget-icon,
+.widget-grid .widget-card:nth-child(1) .widget-value {
+    color: var(--seller-accent-color);
+}
+
+/* Widget 2: Pending Orders - Blue (or another color) */
+.widget-grid .widget-card:nth-child(2) { /* Adjust selector */
+    border-left-color: var(--primary-color);
+}
+.widget-grid .widget-card:nth-child(2) .widget-icon,
+.widget-grid .widget-card:nth-child(2) .widget-value {
+    color: var(--primary-color);
+}
+
+/* Widget 3: Active Products - Seller Accent */
+.widget-grid .widget-card:nth-child(3) { /* Adjust selector */
+    border-left-color: var(--seller-accent-color);
+}
+.widget-grid .widget-card:nth-child(3) .widget-icon,
+.widget-grid .widget-card:nth-child(3) .widget-value {
+    color: var(--seller-accent-color);
+}
+
+/* Widget 4: Available Balance - Seller Accent */
+.widget-grid .widget-card:nth-child(4) { /* Adjust selector */
+    border-left-color: var(--seller-accent-color);
+}
+.widget-grid .widget-card:nth-child(4) .widget-icon,
+.widget-grid .widget-card:nth-child(4) .widget-value {
+    color: var(--seller-accent-color);
+}
+
+
+/* --- Table Styles --- */
+.table-responsive {
+    overflow-x: auto; /* Enables horizontal scrolling for tables */
+}
+
+.data-table, .recent-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden; /* For rounded corners on tables */
+    box-shadow: var(--card-shadow);
+}
+
+.data-table th, .recent-orders-table th {
+    background-color: #f8f9fa; /* Light grey header */
+    color: var(--dark-gray);
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td, .recent-orders-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle; /* Align content vertically */
+}
+
+.data-table tbody tr:last-child td, .recent-orders-table tbody tr:last-child td {
+    border-bottom: none; /* No border on the last row */
+}
+
+.data-table tbody tr:hover, .recent-orders-table tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
+
+/* Specific status colors */
+.status-pending {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.status-shipped {
+    background-color: var(--success-color); /* Green */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.status-delivered {
+    background-color: #17a2b8; /* Info blue */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.data-table .actions a, .recent-orders-table .actions a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.data-table .actions a:hover, .recent-orders-table .actions a:hover {
+    color: #0056b3;
+}
+
+/* Section Actions (like "Add New Product" button) */
+.section-actions {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.btn-primary { /* Inherited */ }
+
+
+/* --- Charts --- */
+.chart-container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-top: 30px;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: 300px; /* Adjust height as needed */
+}
+
+/* --- Recent Activity Section (Example) --- */
+.recent-activity-section { /* Inherited, but add seller specific notes */
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-top: 30px;
+}
+.recent-activity-section h4 {
+     font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+.view-all-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .seller-sidebar { width: 200px; }
+    /* Inherited responsive adjustments for widgets, tables etc. */
+}
+
+@media (max-width: 768px) {
+    .dashboard-wrapper { flex-direction: column; }
+    .seller-sidebar { /* Inherited sidebar collapse styles */
+        width: 100%; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; z-index: 1000; position: fixed; top: 0;
+    }
+    .seller-sidebar.open { max-height: 100vh; }
+
+    .sidebar-header { margin-bottom: 15px; }
+    .sidebar-nav li.nav-item a { padding: 12px 15px; font-size: 1rem; }
+    .sidebar-toggle-btn { display: block; }
+
+    .dashboard-content { padding-left: 0; }
+    .seller-header { /* Inherited header sticky and layout changes */
+        position: sticky; top: 0; z-index: 999; flex-wrap: wrap; justify-content: center; text-align: center;
+    }
+    .seller-header .header-left, .seller-header .header-right { width: 100%; justify-content: center; margin-right: 0; }
+    .seller-header .header-left { margin-bottom: 15px; }
+    .header-actions { order: 2; margin: 10px 0; flex-direction: column; width: 100%; }
+    .header-search, .header-categories { width: 100%; margin-right: 0; margin-bottom: 10px; }
+
+    .dashboard-section { padding: 30px 0; }
+
+    .widget-grid { grid-template-columns: 1fr; }
+    .recommendation-grid { grid-template-columns: 1fr; }
+    .product-card-small { max-width: none; }
+
+    /* Ensure tables are still readable */
+    .data-table th, .data-table td,
+    .recent-orders-table th, .recent-orders-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .status-pending, .status-shipped, .status-delivered {
+        padding: 3px 7px;
+        font-size: 0.75rem;
+    }
+}

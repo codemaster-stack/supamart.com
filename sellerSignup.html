@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Seller - Your E-commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/sellerSignup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.0.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+</head>
+<body>
+
+    <header class="seller-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Your Logo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="seller-signup-section">
+        <div class="container">
+            <div class="seller-signup-box">
+                <h2>Open Your Store</h2>
+                <p class="sub-heading">Start selling your products to a wide audience!</p>
+
+                <form id="sellerSignupForm" action="/seller/register" method="POST" enctype="multipart/form-data">
+                    <!-- enctype="multipart/form-data" is crucial for file uploads -->
+
+                    <div class="section-title">1. Account Information</div>
+                    <div class="form-group">
+                        <label for="sellerEmail">Business Email</label>
+                        <input type="email" id="sellerEmail" name="email" required placeholder="Enter your business email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerPassword">Password</label>
+                        <input type="password" id="sellerPassword" name="password" required minlength="8" placeholder="Create a secure password">
+                        <i class="fas fa-lock"></i>
+                        <small class="password-hint">Minimum 8 characters.</small>
+                    </div>
+
+                    <div class="section-title">2. Store Details</div>
+                    <div class="form-group">
+                        <label for="storeName">Store Name</label>
+                        <input type="text" id="storeName" name="storeName" required placeholder="Your store's name">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="storeURL">Store URL (optional)</label>
+                        <input type="text" id="storeURL" name="storeURL" placeholder="e.g., my-awesome-shop">
+                        <i class="fas fa-link"></i>
+                        <small>This will be your store's web address (e.g., yourstore.yourplatform.com/shop)</small>
+                    </div>
+
+                    <!-- New: Store Logo Upload -->
+                    <div class="form-group">
+                        <label for="storeLogo">Store Logo</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="storeLogo" name="storeLogo" accept="image/*" required>
+                            <i class="fas fa-camera"></i>
+                            <span class="file-name-display">No file chosen</span>
+                        </div>
+                        <small>Recommended: JPG, PNG (under 2MB)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="storeDescription">Store Description</label>
+                        <textarea id="storeDescription" name="storeDescription" rows="4" required placeholder="Briefly describe your store and products"></textarea>
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+
+                    <div class="section-title">3. Contact Information</div>
+                    <div class="form-group">
+                        <label for="sellerFullName">Contact Person's Full Name</label>
+                        <input type="text" id="sellerFullName" name="fullName" required placeholder="Your full name">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <!-- Country Selection -->
+                    <div class="form-group">
+                        <label for="sellerCountry">Country</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <select id="sellerCountry" name="country" required>
+                                <option value="">Select your country</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Phone Number Input with Country Code -->
+                    <div class="form-group">
+                        <label for="sellerPhoneNumber">Business Phone Number</label>
+                        <input type="tel" id="sellerPhoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+                    </div>
+
+                    <!-- New: Address Fields -->
+                    <div class="section-title">4. Business Address</div>
+                    <div class="form-group">
+                        <label for="addressLine1">Address Line 1</label>
+                        <input type="text" id="addressLine1" name="addressLine1" required placeholder="Street address, P.O. box, c/o">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressLine2">Address Line 2 (optional)</label>
+                        <input type="text" id="addressLine2" name="addressLine2" placeholder="Apartment, suite, unit, building, floor, etc.">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required placeholder="Your city">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="stateProvince">State / Province</label>
+                        <input type="text" id="stateProvince" name="stateProvince" required placeholder="Your state or province">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" required placeholder="Your postal code">
+                        <i class="fas fa-mail-bulk"></i>
+                    </div>
+
+
+                    <div class="section-title">5. Payment Information</div>
+                    <p class="note">We'll collect your payment details for payouts later to ensure security.</p>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="sellerTerms" name="sellerTerms" required>
+                        <label for="sellerTerms">I agree to the <a href="#">Seller Terms of Service</a> and <a href="#">Seller Privacy Policy</a></label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Register Your Store</button>
+
+                    <div class="seller-signup-footer-links">
+                        <p>Already have a seller account? <a href="seller-login.html">Login here</a></p>
+                        <p>Or sign up as a <a href="signup.html">customer</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="seller-footer">
+        <div class="container">
+            <p>&copy; 2023 Your E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="../js/sellerSignup.js"></script>
+</body>
+</html>

@@ -88,71 +88,71 @@ a:hover {
     color: #fff;
 }
 
-/* --- Header Styles for Signup Page --- */
-.signup-header {
+/* --- Header Styles for Login Page --- */
+.login-header {
     background: #fff;
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.signup-header .container {
+.login-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.signup-header .logo a {
+.login-header .logo a {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--dark-gray);
     text-decoration: none;
 }
 
-.signup-header nav ul {
+.login-header nav ul {
     list-style: none;
     display: flex;
-    margin: 0; /* Remove default margin if any */
+    margin: 0;
 }
 
-.signup-header nav ul li {
+.login-header nav ul li {
     margin-left: 25px;
 }
 
-.signup-header nav ul li a {
+.login-header nav ul li a {
     text-decoration: none;
     color: #555;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-/* --- Signup Section --- */
-.signup-section {
-    flex-grow: 1; /* Allows this section to take up available space */
+/* --- Login Section --- */
+.login-section {
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 0;
-    background-color: var(--light-gray); /* Match body background */
+    background-color: var(--light-gray);
 }
 
-.signup-box {
+.login-box {
     background: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 450px; /* Slightly narrower than signup */
     text-align: center;
 }
 
-.signup-box h2 {
+.login-box h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: var(--dark-gray);
 }
 
-.signup-box .sub-heading {
+.login-box .sub-heading {
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 30px;
@@ -171,7 +171,6 @@ a:hover {
     color: #555;
 }
 
-.form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
     width: 100%;
@@ -183,7 +182,6 @@ a:hover {
     transition: border-color 0.3s ease;
 }
 
-.form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group input[type="password"]:focus {
     border-color: var(--primary-color);
@@ -204,57 +202,56 @@ a:hover {
     color: var(--primary-color);
 }
 
-.password-hint {
-    display: block;
-    font-size: 0.85rem;
-    color: #777;
-    margin-top: 5px;
-}
-
-.checkbox-group {
+.form-options {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    text-align: left;
+    font-size: 0.95rem;
 }
 
-.checkbox-group input[type="checkbox"] {
+.form-options .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0; /* Override signup checkbox margin */
+}
+
+.form-options .checkbox-group input[type="checkbox"] {
     margin-right: 10px;
-    transform: scale(1.2); /* Slightly larger checkbox */
+    transform: scale(1.1);
     cursor: pointer;
 }
 
-.checkbox-group label {
+.form-options .checkbox-group label {
     font-weight: normal;
     color: #555;
-    display: inline; /* Allows text to flow beside the checkbox */
-    margin-bottom: 0; /* Reset label margin */
+    margin-bottom: 0;
 }
 
-.checkbox-group label a {
+.form-options a {
     font-weight: bold;
 }
 
-.signup-box .btn.btn-primary {
+.login-box .btn.btn-primary {
     width: 100%;
     padding: 15px;
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
 
-.signup-options {
+.login-options-footer {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #eee;
 }
 
-.signup-options p {
+.login-options-footer p {
     margin-bottom: 15px;
     font-size: 1rem;
     color: #555;
 }
 
-.signup-options p a {
+.login-options-footer p a {
     font-weight: bold;
 }
 
@@ -271,119 +268,12 @@ a:hover {
 }
 
 .social-login .btn-social {
-    width: 220px; /* Slightly wider social buttons */
+    width: 220px;
     margin: 5px 0;
 }
 
-
-/* --- Footer Styles for Signup Page --- */
-.signup-footer {
-    background: var(--dark-gray);
-    color: #bbb;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto; /* Pushes footer to the bottom */
-    font-size: 0.9rem;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .signup-header .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .signup-header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .signup-header nav ul li {
-        margin-left: 0;
-    }
-
-    .signup-box {
-        padding: 30px;
-        margin: 20px; /* Add some margin on small screens */
-    }
-
-    .signup-box h2 {
-        font-size: 2rem;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="password"] {
-        padding: 10px 15px 10px 40px; /* Adjust padding for smaller icons/inputs */
-    }
-
-    .checkbox-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .checkbox-group input[type="checkbox"] {
-        margin-bottom: 10px;
-    }
-
-    .social-login {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn-social {
-        width: 100%;
-    }
-}
-
-/* --- New Styles for Country and Phone --- */
-
-/* General select styling */
-.form-group select,
-.form-group input[type="tel"] { /* Target both select and tel input */
-    width: 100%;
-    padding: 12px 15px 12px 45px; /* Padding for icon */
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: var(--input-bg);
-    transition: border-color 0.3s ease;
-    appearance: none; /* Remove default browser styles */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-repeat: no-repeat;
-    background-position: 15px center; /* Icon position */
-    background-size: 20px; /* Icon size */
-    padding-left: 45px; /* Space for icon */
-}
-
-/* Country specific styling */
-#country {
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 1.1-.9 2-2 2H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V12a2 2 0 0 0-2-2z"></path><circle cx="9" cy="13" r="2"></circle><path d="M14 17v.01"></path><path d="M22 10l-6-6-6 6"></path></svg>'); /* Globe icon inline SVG */
-    background-repeat: no-repeat;
-    background-position: 15px center; /* Position of the globe icon */
-}
-
-/* Style for the country code dropdown if using intl-tel-input */
-/* The library adds its own markup and classes for the flag dropdown */
-/* You might need to inspect the element to find the exact classes */
-.intl-tel-input {
-    width: 100%; /* Make the plugin take full width */
-}
-
-.intl-tel-input input[type="tel"] {
-    padding-left: 60px; /* More padding to accommodate flag and code */
-}
-
-/* Icon for the phone number field */
-.form-group .fa-globe {
-    left: 15px; /* Adjust position if needed */
-}
-
-/* For the phone number input, the library will add its own flag icon and dropdown */
-/* You might need to target elements added by the library. */
-/* Example: .intl-tel-input .iti__flag-container { ... } */
-
-
-/* Add error styling */
-.form-group input.input-error,
-.form-group select.input-error {
+/* Error message styling */
+.form-group input.input-error {
     border-color: var(--danger-color);
 }
 
@@ -395,16 +285,65 @@ a:hover {
     text-align: left;
 }
 
-/* Responsive adjustments for form elements */
+
+/* --- Footer Styles for Login Page --- */
+.login-footer {
+    background: var(--dark-gray);
+    color: #bbb;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="password"],
-    .form-group select,
-    .form-group input[type="tel"] {
-        padding: 10px 15px 10px 40px; /* Adjust padding */
+    .login-header .container {
+        flex-direction: column;
+        gap: 15px;
     }
-     .intl-tel-input input[type="tel"] {
-        padding-left: 50px; /* Adjust for smaller screens if needed */
+    .login-header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .login-header nav ul li {
+        margin-left: 0;
+    }
+
+    .login-box {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    .login-box h2 {
+        font-size: 2rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .form-options .checkbox-group {
+        margin-bottom: 0; /* Ensure it aligns correctly */
+    }
+
+    .form-options a {
+        margin-top: 5px; /* Space it out */
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        padding: 10px 15px 10px 40px;
+    }
+
+    .social-login {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-social {
+        width: 100%;
     }
 }
+

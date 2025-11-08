@@ -1,0 +1,211 @@
+/* --- Inherit General Dashboard Styles --- */
+/* Assume styles from style.css and dashboard-style.css are loaded */
+
+/* --- Admin Specific Styles --- */
+
+/* --- Admin Sidebar --- */
+.admin-sidebar {
+    background-color: var(--dark-gray); /* Very dark sidebar for admin */
+    color: #e0e0e0; /* Lighter text */
+    border-right: 1px solid #444; /* Subtle border */
+}
+
+.admin-sidebar .sidebar-header h3 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.admin-sidebar .sidebar-nav li.nav-item a {
+    color: #e0e0e0;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+}
+
+.admin-sidebar .sidebar-nav li.nav-item a i {
+    color: #aaa; /* Lighter icons */
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+}
+
+.admin-sidebar .sidebar-nav li.nav-item a:hover {
+    background-color: #555; /* Slightly lighter hover */
+    color: #fff;
+}
+
+.admin-sidebar .sidebar-nav li.nav-item.active a {
+    background-color: var(--primary-color); /* Or a distinct admin color */
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin-sidebar .sidebar-nav li.nav-item.logout {
+    border-top: 1px solid #555;
+    margin-top: 30px;
+}
+.admin-sidebar .sidebar-nav li.nav-item.logout a {
+    color: var(--danger-color);
+}
+.admin-sidebar .sidebar-nav li.nav-item.logout a:hover {
+    color: #fff;
+}
+
+/* --- Admin Header --- */
+.admin-header {
+    background-color: #ffffff; /* Clean white header */
+    border-left: 5px solid var(--primary-color); /* Primary accent */
+}
+
+.admin-header .header-left h2 {
+    color: var(--dark-gray);
+    font-size: 1.8rem;
+}
+
+.admin-header .header-actions {
+    flex-grow: 1;
+    margin: 0 30px;
+    max-width: 600px; /* Limit search bar width */
+}
+
+.admin-header .header-search input[type="text"] {
+    padding: 12px 45px 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+}
+.admin-header .header-search i {
+    color: #aaa;
+    right: 15px;
+}
+.admin-header .header-search input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.admin-header .header-right .user-name {
+    font-size: 1.1rem;
+}
+
+/* --- Admin Overview Section --- */
+.admin-overview h3 {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+}
+
+.admin-widget-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider widgets */
+    gap: 30px;
+}
+
+.admin-widget {
+    border-left-color: var(--primary-color); /* Default accent */
+    border-left-width: 7px; /* Thicker accent border */
+}
+
+/* Example: Differentiating widget colors */
+.admin-widget:nth-child(1) { border-left-color: var(--primary-color); } /* Revenue */
+.admin-widget:nth-child(2) { border-left-color: var(--success-color); } /* Users */
+.admin-widget:nth-child(3) { border-left-color: var(--secondary-color); } /* Sellers */
+.admin-widget:nth-child(4) { border-left-color: var(--danger-color); } /* Orders */
+
+.admin-widget .widget-icon {
+    font-size: 3rem;
+    color: inherit; /* Inherit border color */
+}
+
+.admin-widget h4 {
+    font-size: 1.3rem;
+}
+
+.admin-widget .widget-value {
+    font-size: 3rem;
+    color: inherit; /* Inherit border color */
+}
+
+/* --- Charts Section --- */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.chart-container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+.chart-container h4 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+    text-align: center;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: 350px; /* Taller charts */
+}
+
+/* --- Section Actions --- */
+.section-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.btn-primary { /* Inherited */ }
+.btn-secondary { /* Inherited */ }
+
+/* --- Tables --- */
+.data-table { /* Inherited */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+/* ... (inherited table styles for th, td, tr:hover, status colors, actions) ... */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .admin-sidebar { width: 200px; }
+    /* Inherited responsive adjustments */
+    .admin-widget-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .charts-section { grid-template-columns: 1fr; }
+    .admin-header .header-actions { margin: 0 15px; max-width: 400px; }
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard-wrapper { flex-direction: column; }
+    .admin-sidebar { /* Inherited sidebar collapse styles */
+        width: 100%; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; z-index: 1000; position: fixed; top: 0;
+    }
+    .admin-sidebar.open { max-height: 100vh; }
+
+    .admin-header { /* Inherited header sticky and layout changes */
+        position: sticky; top: 0; z-index: 999; flex-wrap: wrap; justify-content: center; text-align: center;
+    }
+    .admin-header .header-left, .admin-header .header-right { width: 100%; justify-content: center; margin-right: 0; }
+    .admin-header .header-left { margin-bottom: 15px; }
+    .header-actions { order: 2; margin: 10px 0; flex-direction: column; width: 100%; }
+    .admin-header .header-search { width: 100%; margin-right: 0; margin-bottom: 10px; }
+    .admin-header .header-search input[type="text"] { width: 100%; }
+
+    .dashboard-section { padding: 30px 0; }
+    .admin-widget-grid { grid-template-columns: 1fr; }
+    .chart-container { padding: 20px; height: auto; } /* Adjust chart container */
+    .chart-container canvas { height: 250px; } /* Adjust chart height */
+
+    .section-actions {
+        justify-content: center; /* Center action buttons */
+        flex-wrap: wrap;
+    }
+}

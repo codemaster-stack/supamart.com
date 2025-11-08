@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard - Your E-commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/userDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="" alt="Logo" class="sidebar-logo">
+                <h3>Welcome!</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile">
+                            <i class="fas fa-user-circle"></i> My Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#orders">
+                            <i class="fas fa-shopping-bag"></i> My Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#wishlist">
+                            <i class="fas fa-heart"></i> Wishlist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i> Account Settings
+                        </a>
+                    </li>
+
+                    <!-- Seller Specific Menu Items -->
+                    <li class="nav-item seller-only">
+                        <a href="#store-dashboard">
+                            <i class="fas fa-store"></i> Store Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item seller-only">
+                        <a href="#products">
+                            <i class="fas fa-box"></i> Products
+                        </a>
+                    </li>
+                    <li class="nav-item seller-only">
+                        <a href="#sales">
+                            <i class="fas fa-chart-line"></i> Sales
+                        </a>
+                    </li>
+                    <li class="nav-item seller-only">
+                        <a href="#payouts">
+                            <i class="fas fa-dollar-sign"></i> Payouts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#help">
+                            <i class="fas fa-question-circle"></i> Help & Support
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="#logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-content">
+            <!-- Header/Navbar for the Content Area -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Dashboard Overview</h2>
+                </div>
+                <!-- NEW: Search and Category Integration -->
+                <div class="header-actions">
+                    <div class="header-search">
+                        <input type="text" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="header-categories">
+                        <select class="category-select">
+                            <option value="">Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="home-goods">Home Goods</option>
+                            <option value="books">Books</option>
+                            <!-- More categories -->
+                        </select>
+                        <i class="fas fa-chevron-down category-arrow"></i>
+                    </div>
+                </div>
+                <!-- Existing Header Right -->
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="" alt="User Avatar">
+                    </div>
+                    <div class="user-name">Jane Doe</div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <section id="dashboard" class="dashboard-section active">
+                <div class="container">
+                    <h3>Welcome Back, Jane Doe!</h3>
+                    <p>Here's a summary of your recent activity.</p>
+
+                    <!-- Widgets/Cards -->
+                    <div class="widget-grid">
+                        <div class="widget-card">
+                            <i class="fas fa-shopping-cart widget-icon"></i>
+                            <h4>Total Orders</h4>
+                            <p class="widget-value">150</p>
+                            <a href="#orders" class="widget-link">View Orders <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="widget-card seller-only">
+                            <i class="fas fa-dollar-sign widget-icon"></i>
+                            <h4>Account Balance</h4>
+                            <p class="widget-value">$1,234.56</p>
+                            <a href="#payouts" class="widget-link">View Payouts <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="widget-card">
+                            <i class="fas fa-star widget-icon"></i>
+                            <h4>Pending Reviews</h4>
+                            <p class="widget-value">5</p>
+                            <a href="#reviews">View Reviews <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="widget-card">
+                            <i class="fas fa-heart widget-icon"></i>
+                            <h4>Wishlist Items</h4>
+                            <p class="widget-value">25</p>
+                            <a href="#wishlist">View Wishlist <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Product Recommendations/Categories Section -->
+                    <div class="recommendations-section">
+                        <h4>Recommended for You</h4>
+                        <div class="recommendation-grid">
+                            <div class="product-card-small">
+                                <img src="" alt="Recommended Product 1">
+                                <div class="product-info">
+                                    <h5>Awesome Gadget</h5>
+                                    <p class="price">$49.99</p>
+                                    <a href="#" class="btn-small">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="product-card-small">
+                                <img src="" alt="Recommended Product 2">
+                                <div class="product-info">
+                                    <h5>Stylish Shoes</h5>
+                                    <p class="price">$89.00</p>
+                                    <a href="#" class="btn-small">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="product-card-small">
+                                <img src="" alt="Recommended Product 3">
+                                <div class="product-info">
+                                    <h5>Cozy Blanket</h5>
+                                    <p class="price">$35.50</p>
+                                    <a href="#" class="btn-small">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view-all-products">
+                            <a href="#shop" class="btn-outline">View All Products</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="dashboard-section">
+                <div class="container">
+                    <h3>My Profile</h3>
+                    <p>Edit your personal information and contact details.</p>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="dashboard-section">
+                <div class="container">
+                    <h3>My Orders</h3>
+                    <p>View your past and current order history.</p>
+                </div>
+            </section>
+
+            <!-- Wishlist Section -->
+            <section id="wishlist" class="dashboard-section">
+                <div class="container">
+                    <h3>My Wishlist</h3>
+                    <p>Items you've saved for later.</p>
+                </div>
+            </section>
+
+            <!-- Account Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <div class="container">
+                    <h3>Account Settings</h3>
+                    <p>Manage your password, email preferences, etc.</p>
+                </div>
+            </section>
+
+            <!-- Seller Specific Sections (hidden for buyers) -->
+            <section id="store-dashboard" class="dashboard-section seller-only">
+                <div class="container">
+                    <h3>Store Dashboard</h3>
+                    <p>Overview of your store's performance.</p>
+                </div>
+            </section>
+            <!-- ... other seller sections ... -->
+
+            <section id="help" class="dashboard-section">
+                <div class="container">
+                    <h3>Help & Support</h3>
+                    <p>Find answers to your questions or contact support.</p>
+                </div>
+            </section>
+
+            <section id="logout" class="dashboard-section">
+                <!-- No content needed here -->
+            </section>
+
+        </div> <!-- .dashboard-content -->
+    </div> <!-- .dashboard-wrapper -->
+    
+
+    <script src="../js/userDashboard.js"></script>
+</body>
+</html>

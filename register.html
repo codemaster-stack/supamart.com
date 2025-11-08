@@ -1,54 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supamart - Sign Up</title>
-  <link rel="stylesheet" href="../css/main.css">      <!-- global styles -->
-  <link rel="stylesheet" href="../css/register.css">  <!-- page-specific -->
-  <!-- intl-tel-input CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Your E-commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Added for flag icons - you can choose to use this or just text codes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.0.0/css/flag-icons.min.css">
+    <!-- International Telephone Input CSS (optional but recommended for styling) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
 </head>
 <body>
-  <header>
-    <a href="index.html"><img src="../assets/images/logo.png" alt="Supamart Logo" class="logo"></a>
-  </header>
 
-  <main>
-    <div class="signup-container">
-      <h2>Create Your Account</h2>
-      <form id="signup-form">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required>
+    <header class="signup-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Your Logo</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+    <main class="signup-section">
+        <div class="container">
+            <div class="signup-box">
+                <h2>Create Your Account</h2>
+                <p class="sub-heading">Join us and get access to exclusive features and offers!</p>
 
-        <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" name="phone" required>
+                <form id="signupForm" action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <!-- Country Selection -->
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <select id="country" name="country" required>
+                                <option value="">Select your country</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Input with Country Code -->
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <!--
+                            The 'intl-tel-input' library often handles this structure:
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            It injects a dropdown for country codes next to it.
+                            If not using a library, you'd use a structure like:
+                            <div class="phone-input-group">
+                                <select id="countryCode" name="countryCode" required>
+                                    <option value="+1">USA (+1)</option>
+                                    ... other country codes
+                                </select>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Your phone number">
+                            </div>
+                        -->
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+                        <!-- The library will add icons/dropdowns here -->
+                    </div>
 
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required minlength="8" placeholder="Create a strong password">
+                        <i class="fas fa-lock"></i>
+                        <small class="password-hint">Minimum 8 characters.</small>
+                    </div>
 
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                        <i class="fas fa-lock"></i>
+                    </div>
 
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
-  </main>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
 
-<!-- intl-tel-input JS (must load before register.js) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
 
-<!-- Page-specific JS -->
-<script src="../js/register.js"></script>
+                    <div class="signup-options">
+                        <p>Already have an account? <a href="login.html">Login here</a></p>
+                        <div class="social-login">
+                            <p>Or sign up with:</p>
+                            <button type="button" class="btn btn-social google"><i class="fab fa-google"></i> Google</button>
+                            <button type="button" class="btn btn-social facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 
-<!-- Global JS -->
-<script src="../js/main.js"></script>
+    <footer class="signup-footer">
+        <div class="container">
+            <p>&copy; 2023 Your E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Include jQuery (required by intl-tel-input) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- International Telephone Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <!-- Link to your JavaScript file -->
+    <script src="../js/register.js"></script>
 </body>
 </html>

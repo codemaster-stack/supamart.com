@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Your E-commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/seller-dashboard.css"> <!-- New CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add CSS for any charts or tables you plan to use -->
+</head>
+<body>
+
+    <div class="dashboard-wrapper seller-dashboard-wrapper"> <!-- Added seller-specific class -->
+
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar seller-sidebar"> <!-- Added seller-specific class -->
+            <div class="sidebar-header">
+                <img src="" alt="Logo" class="sidebar-logo">
+                <h3>Your Store</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Seller Dashboard Menu Items -->
+                    <li class="nav-item active">
+                        <a href="#seller-overview">
+                            <i class="fas fa-tachometer-alt"></i> Overview
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#seller-orders">
+                            <i class="fas fa-shopping-bag"></i> Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products">
+                            <i class="fas fa-box"></i> Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sales-reports">
+                            <i class="fas fa-chart-line"></i> Sales Reports
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#payouts">
+                            <i class="fas fa-dollar-sign"></i> Payouts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#store-settings">
+                            <i class="fas fa-store"></i> Store Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support">
+                            <i class="fas fa-question-circle"></i> Support
+                        </a>
+                    </li>
+
+                    <li class="nav-item logout">
+                        <a href="#logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-content">
+            <!-- Header/Navbar for the Content Area -->
+            <header class="dashboard-header seller-header"> <!-- Added seller-specific class -->
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Seller Overview</h2> <!-- Title changes based on section -->
+                </div>
+                <!-- Search and Category are less critical here, maybe just site-wide search if needed -->
+                <!-- Or remove this part if you want a cleaner seller-only header -->
+                <div class="header-actions">
+                    <div class="header-search">
+                        <input type="text" placeholder="Search your products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <!-- Category select is less relevant here, but could be for finding products to list -->
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span> <!-- Seller notifications -->
+                    </div>
+                    <div class="user-avatar">
+                        <img src="" alt="Seller Avatar">
+                    </div>
+                    <div class="user-name">Store Owner Name</div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <section id="seller-overview" class="dashboard-section active">
+                <div class="container">
+                    <h3>Welcome, [Store Name]!</h3>
+                    <p>Here's a snapshot of your store's performance.</p>
+
+                    <!-- Seller Widgets/Cards -->
+                    <div class="widget-grid">
+                        <!-- Widget 1: Total Sales -->
+                        <div class="widget-card">
+                            <i class="fas fa-dollar-sign widget-icon"></i>
+                            <h4>Total Sales</h4>
+                            <p class="widget-value">$5,432.10</p>
+                            <a href="#sales-reports" class="widget-link">View Reports <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 2: Pending Orders -->
+                        <div class="widget-card">
+                            <i class="fas fa-shipping-fast widget-icon"></i>
+                            <h4>Pending Orders</h4>
+                            <p class="widget-value">15</p>
+                            <a href="#seller-orders" class="widget-link">View Orders <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 3: Active Products -->
+                        <div class="widget-card">
+                            <i class="fas fa-box widget-icon"></i>
+                            <h4>Active Products</h4>
+                            <p class="widget-value">75</p>
+                            <a href="#products" class="widget-link">Manage Products <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 4: Available Balance -->
+                        <div class="widget-card">
+                            <i class="fas fa-wallet widget-icon"></i>
+                            <h4>Available Balance</h4>
+                            <p class="widget-value">$1,234.56</p>
+                            <a href="#payouts" class="widget-link">View Payouts <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders Section (example) -->
+                    <div class="recent-activity-section">
+                        <h4>Recent Orders</h4>
+                        <div class="table-responsive"> <!-- For better table display on mobile -->
+                            <table class="recent-orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Customer</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#12345</td>
+                                        <td>2023-10-27</td>
+                                        <td>John Doe</td>
+                                        <td>$45.99</td>
+                                        <td><span class="status-pending">Pending</span></td>
+                                        <td><a href="#">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#12346</td>
+                                        <td>2023-10-27</td>
+                                        <td>Jane Smith</td>
+                                        <td>$120.50</td>
+                                        <td><span class="status-shipped">Shipped</span></td>
+                                        <td><a href="#">View</a></td>
+                                    </tr>
+                                    <!-- More orders -->
+                                </tbody>
+                            </table>
+                        </div>
+                         <div class="view-all-link">
+                            <a href="#seller-orders" class="btn-outline">View All Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="seller-orders" class="dashboard-section">
+                <div class="container">
+                    <h3>All Orders</h3>
+                    <p>Manage and track all orders for your products.</p>
+                    <!-- Orders table/list with filtering and sorting -->
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Order rows will go here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="dashboard-section">
+                <div class="container">
+                    <h3>Your Products</h3>
+                    <div class="section-actions">
+                        <a href="#add-product" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</a>
+                    </div>
+                    <!-- Products table/list -->
+                     <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Product rows will go here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sales Reports Section -->
+            <section id="sales-reports" class="dashboard-section">
+                <div class="container">
+                    <h3>Sales Reports</h3>
+                    <p>Analyze your sales performance over time.</p>
+                    <!-- Filters for date range, product, etc. -->
+                    <div class="filter-controls">
+                        <!-- Date range picker, category filters etc. -->
+                    </div>
+                    <!-- Charts and data tables -->
+                    <div class="chart-container">
+                        <canvas id="salesOverviewChart"></canvas> <!-- Example chart -->
+                    </div>
+                    <div class="data-table-container">
+                        <!-- Detailed sales data table -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payouts Section -->
+            <section id="payouts" class="dashboard-section">
+                <div class="container">
+                    <h3>Payouts & Earnings</h3>
+                    <p>View your earnings, transactions, and manage payout methods.</p>
+                    <!-- Balance, transaction history, payout method forms -->
+                </div>
+            </section>
+
+            <!-- Store Settings Section -->
+            <section id="store-settings" class="dashboard-section">
+                <div class="container">
+                    <h3>Store Settings</h3>
+                    <p>Update your store's name, description, logo, contact info, etc.</p>
+                    <!-- Store settings form -->
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section id="support" class="dashboard-section">
+                <div class="container">
+                    <h3>Support</h3>
+                    <p>Frequently Asked Questions or contact form for sellers.</p>
+                    <!-- FAQ, contact form -->
+                </div>
+            </section>
+
+            <section id="logout" class="dashboard-section">
+                <!-- No content needed -->
+            </section>
+
+        </div> <!-- .dashboard-content -->
+    </div> <!-- .dashboard-wrapper -->
+    
+
+    <!-- Include necessary JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- If you're using charts, include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Your seller dashboard JS -->
+    <script src="../js/seller-dashboard.js"></script>
+</body>
+</html>

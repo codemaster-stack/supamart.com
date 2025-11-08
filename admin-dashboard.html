@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Your E-commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css"> <!-- New CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Include CSS for charts, tables, etc. -->
+</head>
+<body>
+
+    <div class="dashboard-wrapper admin-dashboard-wrapper">
+
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar admin-sidebar">
+            <div class="sidebar-header">
+                <img src="" alt="Logo" class="sidebar-logo">
+                <h3>Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <!-- Admin Dashboard Menu Items -->
+                    <li class="nav-item active">
+                        <a href="#admin-overview">
+                            <i class="fas fa-chart-line"></i> Overview
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#manage-users">
+                            <i class="fas fa-users"></i> Manage Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#manage-sellers">
+                            <i class="fas fa-store"></i> Manage Sellers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#manage-products">
+                            <i class="fas fa-box"></i> Manage Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#manage-orders">
+                            <i class="fas fa-shopping-bag"></i> Manage Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#manage-categories">
+                            <i class="fas fa-tags"></i> Manage Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#site-settings">
+                            <i class="fas fa-cog"></i> Site Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support-tickets">
+                            <i class="fas fa-headset"></i> Support Tickets
+                        </a>
+                    </li>
+
+                    <li class="nav-item logout">
+                        <a href="#admin-logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-content">
+            <!-- Header/Navbar for the Content Area -->
+            <header class="dashboard-header admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Admin Overview</h2> <!-- Title changes based on section -->
+                </div>
+                <div class="header-actions">
+                    <!-- Admin might have different quick actions or search -->
+                    <div class="header-search">
+                        <input type="text" placeholder="Search users, orders, products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span> <!-- Admin notifications -->
+                    </div>
+                    <div class="user-avatar">
+                        <img src="" alt="Admin Avatar">
+                    </div>
+                    <div class="user-name">Admin User</div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <section id="admin-overview" class="dashboard-section active">
+                <div class="container">
+                    <h3>Platform Overview</h3>
+                    <p>Key metrics and insights for the entire platform.</p>
+
+                    <!-- Admin Widgets/Cards -->
+                    <div class="widget-grid admin-widget-grid">
+                        <!-- Widget 1: Total Revenue -->
+                        <div class="widget-card admin-widget">
+                            <i class="fas fa-coins widget-icon"></i>
+                            <h4>Total Revenue</h4>
+                            <p class="widget-value">$150,000</p>
+                            <a href="#sales-reports" class="widget-link">View All Sales <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 2: Total Users -->
+                        <div class="widget-card admin-widget">
+                            <i class="fas fa-users widget-icon"></i>
+                            <h4>Total Users</h4>
+                            <p class="widget-value">12,500</p>
+                            <a href="#manage-users" class="widget-link">Manage Users <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 3: Total Sellers -->
+                        <div class="widget-card admin-widget">
+                            <i class="fas fa-store widget-icon"></i>
+                            <h4>Total Sellers</h4>
+                            <p class="widget-value">350</p>
+                            <a href="#manage-sellers" class="widget-link">Manage Sellers <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Widget 4: Total Orders -->
+                        <div class="widget-card admin-widget">
+                            <i class="fas fa-shopping-bag widget-icon"></i>
+                            <h4>Total Orders</h4>
+                            <p class="widget-value">2,800</p>
+                            <a href="#manage-orders" class="widget-link">Manage Orders <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Platform Performance Charts -->
+                    <div class="charts-section">
+                        <div class="chart-container">
+                            <h4>Revenue Over Time</h4>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h4>User Growth</h4>
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Users Section -->
+            <section id="manage-users" class="dashboard-section">
+                <div class="container">
+                    <h3>Manage Users</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New User</button>
+                        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filters</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Registered</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- User rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Sellers Section -->
+            <section id="manage-sellers" class="dashboard-section">
+                <div class="container">
+                    <h3>Manage Sellers</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Approve New Seller</button>
+                        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filters</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Seller ID</th>
+                                    <th>Store Name</th>
+                                    <th>Contact Person</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Seller rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Products Section -->
+            <section id="manage-products" class="dashboard-section">
+                <div class="container">
+                    <h3>Manage Products</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</button>
+                        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filters</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Product ID</th>
+                                    <th>Name</th>
+                                    <th>Seller</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Product rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Orders Section -->
+            <section id="manage-orders" class="dashboard-section">
+                <div class="container">
+                    <h3>Manage Orders</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filters</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Seller</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Order rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Categories Section -->
+            <section id="manage-categories" class="dashboard-section">
+                <div class="container">
+                    <h3>Manage Categories</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Category</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Category ID</th>
+                                    <th>Name</th>
+                                    <th>Products Count</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Category rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Site Settings Section -->
+            <section id="site-settings" class="dashboard-section">
+                <div class="container">
+                    <h3>Site Settings</h3>
+                    <p>Configure general website settings, themes, etc.</p>
+                    <!-- Forms for site-wide settings -->
+                </div>
+            </section>
+
+            <!-- Support Tickets Section -->
+            <section id="support-tickets" class="dashboard-section">
+                <div class="container">
+                    <h3>Support Tickets</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filters</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket ID</th>
+                                    <th>Subject</th>
+                                    <th>User/Seller</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Ticket rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="admin-logout" class="dashboard-section">
+                <!-- No content needed -->
+            </section>
+
+        </div> <!-- .dashboard-content -->
+    </div> <!-- .dashboard-wrapper -->
+
+    <!-- Include necessary JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/admin-dashboard.js"></script> <!-- New JS file -->
+</body>
+</html>
