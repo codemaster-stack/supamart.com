@@ -1,9 +1,12 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/", "dest": "/index.html" },
+    { "src": "/home", "dest": "/index.html" },
     { "src": "/login", "dest": "/login.html" },
-    { "src": "/register", "dest": "/register.html" },
-    { "src": "/profile", "dest": "/profile.html" }
+    { "src": "/signup", "dest": "/signup.html" },
+    { "src": "/login", "dest": "/login.html" },
+    { "src": "/userpage", "dest": "/user-dashboard.html" },
+    { "src": "/mechant", "dest": "/seller-dashbaord.html" },
+    { "src": "/seller-signup", "dest": "/seller-signup.html" }
   ]
 }
