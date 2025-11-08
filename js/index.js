@@ -24,3 +24,14 @@ function displayPlaceholderProducts() {
 
 // Load placeholders on page load
 displayPlaceholderProducts();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('header nav ul');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');  // toggle visibility
+    });
+});
+

@@ -10,6 +10,8 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f8f8;
+    padding-top: 100px; /* adjust to your header height */
+    
 }
 
 .container {
@@ -24,6 +26,29 @@ header {
     background: #fff;
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
+    position: fixed;      
+    top: 0;               
+    left: 0;              
+    width: 100%;          
+    z-index: 1000;        /* stay above other elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional shadow */
+    transition: top 0.3s ease;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* or space-around / space-between */
+    gap: 20px;                 /* space between items */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hamburger {
+    display: none;            /* hidden on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 header .container {
@@ -60,6 +85,7 @@ nav ul li a {
     color: #555;
     font-weight: bold;
 }
+
 
 .header-icons {
     display: flex;
@@ -300,18 +326,6 @@ nav ul li a {
 .btn-outline:hover {
     background: #007bff;
     color: #fff;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;     /* stack image and text vertically */
-        text-align: center;         /* center text and button */
-    }
-    .about-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;        /* center text and button */
-    }
 }
 
 
@@ -574,10 +588,45 @@ footer {
     }
 }
 
-/* In your style.css */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;     /* stack image and text vertically */
+        text-align: center;         /* center text and button */
+    }
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        /* center text and button */
+    }
+}
 
-/* ... (other general styles) ... */
 
+
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;            /* hide menu initially */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;       /* float over page */
+        top: 70px;                /* just below header */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    header nav ul.show {
+        display: flex;            /* menu shows when toggled */
+    }
+}
 /* Style for the "Become a Seller" button in the header */
 .nav-seller-btn {
     background: var(--secondary-color); /* Use a secondary color or a distinct color */
@@ -626,5 +675,29 @@ footer {
 }
 
 
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;       /* hide menu initially */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;  /* so it floats over page */
+        top: 60px;           /* below header */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    header nav ul.show {
+        display: flex;       /* show menu when active */
+    }
+}
 
 
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;  /* stack menu items vertically */
+        align-items: center;
+    }
+}
