@@ -1,0 +1,228 @@
+/* --- General Layout Styles (can be moved to main style.css) --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --danger-color: #dc3545;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --border-color: #ced4da;
+    --input-bg: #f8f9fa;
+    --admin-header-color: #343a40; /* Darker header for admin */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* --- Admin Signup Specific Styles --- */
+.admin-signup-wrapper {
+    width: 100%;
+    max-width: 500px; /* Standard box width */
+    margin: 0 auto;
+}
+
+.admin-signup-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-signup-box .logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--admin-header-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.admin-signup-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-gray);
+}
+
+.admin-signup-box .sub-heading {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    transition: border-color 0.3s ease;
+}
+
+.form-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.form-group input:focus + i {
+    color: var(--primary-color);
+}
+
+.password-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Styling for select dropdowns (if used) */
+.select-wrapper {
+    position: relative;
+}
+.select-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1rem;
+    z-index: 1;
+}
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.admin-signup-box .btn.btn-primary {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.admin-signup-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Error message styling */
+.form-group input.input-error {
+    border-color: var(--danger-color);
+}
+.form-group .error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* ===== Logo Styling ===== */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 120px;     /* adjust size to fit header */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);   /* slight zoom on hover */
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .logo img {
+    width: 90px; /* smaller logo on mobile */
+  }
+}
+
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 576px) {
+    .admin-signup-box {
+        padding: 30px;
+        margin: 20px; /* Add margin on small screens */
+    }
+    .admin-signup-box h2 {
+        font-size: 2rem;
+    }
+}

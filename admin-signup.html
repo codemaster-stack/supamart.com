@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signup - Your E-commerce Store</title>
+    <!-- Link to your general site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Styles specific to this admin signup page -->
+    <link rel="stylesheet" href="../css/admin-signup.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="admin-signup-wrapper">
+        <div class="admin-signup-box">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Your Store Logo" class="site-logo"> <!-- Link back to admin login or dashboard -->
+            </div>
+            <h2>Create New Admin Account</h2>
+            <p class="sub-heading">Enter administrator credentials.</p>
+
+            <form id="adminSignupForm" action="/admin/users/create" method="POST">
+                <!-- Server will handle the actual creation and permissions -->
+
+                <div class="form-group">
+                    <label for="adminEmail">Email Address</label>
+                    <input type="email" id="adminEmail" name="email" required placeholder="Enter admin email">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" name="password" required minlength="8" placeholder="Create a secure password">
+                    <i class="fas fa-lock"></i>
+                    <small class="password-hint">Minimum 8 characters, include numbers and symbols.</small>
+                </div>
+                <div class="form-group">
+                    <label for="adminConfirmPassword">Confirm Password</label>
+                    <input type="password" id="adminConfirmPassword" name="confirmPassword" required placeholder="Confirm password">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <!-- Optional: Admin Name -->
+                <div class="form-group">
+                    <label for="adminFullName">Full Name</label>
+                    <input type="text" id="adminFullName" name="fullName" placeholder="Administrator's full name">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <!-- Optional: Role Selection (if applicable) -->
+                <!-- This is complex and usually managed by existing admins, but could be included -->
+                <!--
+                <div class="form-group">
+                    <label for="adminRole">Admin Role</label>
+                    <div class="select-wrapper">
+                        <i class="fas fa-user-tag"></i>
+                        <select id="adminRole" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="super_admin">Super Admin</option>
+                            <option value="editor">Editor</option>
+                            <option value="support_manager">Support Manager</option>
+                        </select>
+                    </div>
+                </div>
+                -->
+
+                <button type="submit" class="btn btn-primary">Create Admin Account</button>
+
+                <div class="admin-signup-footer">
+                    <p>Need to log in instead? <a href="/admin/login">Admin Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file for admin signup page -->
+      <script src="../js/loadingIndicator.js"></script>
+    <script src="../js/admin-signup.js"></script>
+</body>
+</html>

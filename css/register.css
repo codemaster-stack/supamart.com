@@ -286,6 +286,36 @@ a:hover {
     font-size: 0.9rem;
 }
 
+
+/* ===== Logo Styling ===== */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 120px;     /* adjust size to fit header */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);   /* slight zoom on hover */
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .logo img {
+    width: 90px; /* smaller logo on mobile */
+  }
+}
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .signup-header .container {
