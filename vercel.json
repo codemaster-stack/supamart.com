@@ -4,7 +4,7 @@
     { "source": "/home", "destination": "/index.html" },
     { "source": "/login", "destination": "/login.html" },
     { "source": "/signup", "destination": "/signup.html" },
-    { "source": "/userpage", "destination": "/user-dashboard.html" },
+    { "source": "/userpage", "destination": "/user-dashboard" },
     { "source": "/merchant", "destination": "/seller-dashboard.html" },
     { "source": "/seller-signup", "destination": "/seller-signup.html" }
   ],
