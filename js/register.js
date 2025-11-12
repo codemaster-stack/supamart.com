@@ -163,7 +163,7 @@ async function handleSignup(signupData) {
             
             // Redirect to user dashboard
             setTimeout(() => {
-                window.location.href = '/userpage';
+                window.location.href = '/login';
             }, 2000);
             
         } else {

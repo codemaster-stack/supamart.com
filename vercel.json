@@ -2,7 +2,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/home", "destination": "/index.html" },
-    { "source": "/login", "destination": "/login" },
+    { "source": "/login", "destination": "/login.html" },
     { "source": "/signup", "destination": "/signup.html" },
     { "source": "/userpage", "destination": "/user-dashboard" },
     { "source": "/merchant", "destination": "/seller-dashboard.html" },
