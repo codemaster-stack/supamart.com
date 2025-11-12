@@ -98,7 +98,7 @@ async function handleAdminSignup(adminData) {
             
             // Redirect to admin dashboard
             setTimeout(() => {
-                window.location.href = '/admin-dashboard';
+                window.location.href = '/login';
             }, 2000);
             
         } else {
