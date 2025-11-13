@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Shop - Supamart</title>
+    
+    <!-- IMPORTANT: Use correct path to CSS -->
+    <link rel="stylesheet" href="css/seller-shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Simple Header -->
+    <header style="background: #fff; padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; top: 0; width: 100%; z-index: 1000;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: #333; font-size: 1.5rem; font-weight: bold;">
+                    <i class="fas fa-store"></i> Supamart
+                </a>
+            </div>
+            <nav>
+                <a href="index.html" style="margin: 0 15px; text-decoration: none; color: #555;">Home</a>
+                <a href="login.html" style="margin: 0 15px; text-decoration: none; color: #555;">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Add padding to prevent content going under fixed header -->
+    <div style="height: 80px;"></div>
+
+    <!-- Seller Shop Banner -->
+    <section class="seller-shop-banner">
+        <div class="container">
+            <div class="shop-info">
+                <img id="shop-logo" src="assets/images/placeholder.png" alt="Shop Logo" class="shop-logo">
+                <div class="shop-details">
+                    <h1 id="shop-name">Loading Shop...</h1>
+                    <p id="shop-description">Please wait...</p>
+                    <button class="btn-outline" onclick="shareShop()">
+                        <i class="fas fa-share"></i> Share Shop
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Products -->
+    <section class="shop-products">
+        <div class="container">
+            <h2>Products</h2>
+            <div id="products-grid" class="product-grid">
+                <div style="text-align: center; padding: 40px; grid-column: 1 / -1;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: #667eea;"></i>
+                    <p style="margin-top: 20px; color: #666;">Loading products...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer style="background: #333; color: #eee; padding: 40px 0; text-align: center; margin-top: 60px;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <p>&copy; 2024 Supamart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts with correct paths -->
+    <script src="js/loadingIndicator.js"></script>
+    <script src="js/currencyConverter.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/seller-shop.js"></script>
+</body>
+</html>

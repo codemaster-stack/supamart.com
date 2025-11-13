@@ -1,0 +1,193 @@
+/* seller-shop.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Seller Shop Banner */
+.seller-shop-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0 60px 0;
+    color: white;
+}
+
+.shop-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.shop-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shop-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.shop-details p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #667eea;
+}
+
+/* Shop Products Section */
+.shop-products {
+    padding: 60px 0;
+    background: #f8f8f8;
+}
+
+.shop-products h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.product-card button {
+    width: 100%;
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.product-card button:hover {
+    background: #5568d3;
+}
+
+/* Empty Shop State */
+.empty-shop {
+    text-align: center;
+    padding: 60px 20px;
+    grid-column: 1 / -1;
+}
+
+.empty-shop i {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-shop h3 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.empty-shop p {
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .shop-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .shop-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .shop-details h1 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .seller-shop-banner {
+        padding: 60px 0 40px 0;
+    }
+}
