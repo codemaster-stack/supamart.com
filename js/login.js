@@ -64,19 +64,24 @@ async function handleLogin(email, password, rememberMe) {
         
         const result = await response.json();
         
+        console.log('Login response:', result); // DEBUG
+        
         if (response.ok && result.success) {
-            const storage = rememberMe ? localStorage : sessionStorage;
-            storage.setItem('token', result.token);
-            storage.setItem('user', JSON.stringify(result.user));
-            storage.setItem('role', result.role);
+            // CRITICAL: Use localStorage for all logins (ignore rememberMe for now)
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('user', JSON.stringify(result.user));
+            localStorage.setItem('role', result.role);
+            
+            console.log('Stored token:', localStorage.getItem('token')); // DEBUG
+            console.log('Stored role:', localStorage.getItem('role')); // DEBUG
             
             // NEW: Store user's currency and location (for regular users only)
             if (result.user.role === 'user' && result.user.currency) {
-                storage.setItem('userCurrency', result.user.currency);
+                localStorage.setItem('userCurrency', result.user.currency);
                 console.log('✅ User currency set to:', result.user.currency);
             }
             if (result.user.role === 'user' && result.user.location) {
-                storage.setItem('userLocation', JSON.stringify(result.user.location));
+                localStorage.setItem('userLocation', JSON.stringify(result.user.location));
                 console.log('✅ User location:', result.user.location);
             }
             
@@ -84,9 +89,11 @@ async function handleLogin(email, password, rememberMe) {
             loadingIndicator.show('Login successful! Redirecting...');
             showSuccessMessage('Login successful! Redirecting...');
             
+            // Redirect with a slight delay
             setTimeout(() => {
+                console.log('Redirecting to:', result.dashboardUrl); // DEBUG
                 window.location.href = result.dashboardUrl;
-            }, 1500);
+            }, 1000);
             
         } else {
             loadingIndicator.hide();

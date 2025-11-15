@@ -12,14 +12,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Check Authentication
+// Check Authentication - IMPROVED
 function checkAuth() {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
     
-    if (!token || role !== 'admin') {
-        alert('Unauthorized! Admin access only.');
+    console.log('=== AUTH CHECK ===');
+    console.log('Token:', token ? 'EXISTS' : 'MISSING');
+    console.log('Role:', role);
+    console.log('==================');
+    
+    if (!token) {
+        console.error('❌ No token found');
+        alert('Session expired. Please login again.');
         window.location.href = '/login.html';
+        return false;
     }
+    
+    if (role !== 'admin') {
+        console.error('❌ Not an admin. Role:', role);
+        alert('Unauthorized! Admin access only.');
+        // Don't redirect immediately - let user see the alert
+        setTimeout(() => {
+            window.location.href = '/login.html';
+        }, 2000);
+        return false;
+    }
+    
+    console.log('✅ Auth check passed');
+    return true;
 }
 
 // Get Auth Headers
