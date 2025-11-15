@@ -49,8 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // WIDGET LINKS NAVIGATION (NEW!!)
 // ===============================
+// ===============================
+// WIDGET LINKS NAVIGATION (NEW!!)
+// ===============================
 const widgetLinks = document.querySelectorAll('.widget-link');
-const headerTitleElement = document.querySelector('.seller-header h2');
+const headerTitleElement = document.querySelector('.seller-header h2'); // <-- keep only this one
 
 widgetLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -86,6 +89,7 @@ widgetLinks.forEach(link => {
         document.body.classList.remove('sidebar-open');
     });
 });
+
 
     // Initialize default section
     const activeNavItem = document.querySelector('.sidebar-nav .nav-item.active');
