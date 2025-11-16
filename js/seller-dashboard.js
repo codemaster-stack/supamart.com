@@ -310,9 +310,11 @@ async function loadSectionData(sectionId) {
         case 'sales-reports':
             initSalesChart();
             break;
+        case 'store-settings':  // ✅ ADD THIS CASE
+            loadStoreSettings();
+            break;
     }
 }
-
 // Load All Orders
 async function loadAllOrders() {
     const tbody = document.getElementById('all-orders-tbody');
